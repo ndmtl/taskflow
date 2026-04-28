@@ -1,0 +1,105 @@
+:root {
+    --black: #170f0d;
+    --color-1: #d90f23;
+    --color-2: #148f5f;
+    --color-3: #2e20d2;
+    --color-4: #343332;
+    --color-5: #eaeceb;
+    --white: #fff;
+}
+
+html {
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    font-size: clamp(1rem, 2.5vw, 2rem);
+}
+
+hr {
+    display: block;
+    width: 100%;
+
+    color: var(--color-3);
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    width: 400px;
+    margin: auto;
+    padding: 5%;
+    border-radius: 20px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.inputControl {
+    display: flex;
+    flex-direction: column
+}
+
+label {
+    padding: 0.5rem 0;
+}
+
+label span {
+    display: block;
+    font-size: 0.95rem;
+}
+
+input {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    transition: border 0.3s ease-in, transform 0.3s ease-in;
+}
+
+input:focus {
+    border: var(--color-4) 1px solid;
+    transform: scale(1.1);
+}
+
+button {
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    color: var(--white);
+    cursor: grab;
+    background-color: var(--color-3);
+    transition: background-color 0.3s ease-in, transform 0.3s ease-in;
+}
+
+button:hover {
+    background-color: var(--color-4);
+    transform: scale(1.1);
+}
+
+/*Pour les validations de formulaire*/
+
+.inputControl.error input {
+    border: var(--color-1) 2px solid;
+}
+
+.inputControl.success input {
+    border: var(--color-2) 2px solid;
+}
+
+.errorMessage {
+    color: var(--color-1);
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+
+}
