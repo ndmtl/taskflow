@@ -1,8 +1,23 @@
+//Infos perso
 const form = document.getElementById('form');
-const userName = document.getElementById('userName')
-const email = document.getElementById('email')
+const firstName = document.getElementById('firstName');
+const lastName = document.getElementById('lasttName');
+const phone = document.getElementById('phone');
+const email = document.getElementById('email');
+// Infos de l'entreprise
+const business = document.getElementById('business');
+const activity = document.getElementById('activity');
+const teamSize = document.getElementsByName('teamsize');
+const website = document.getElementById('website');
+//Infos compte
+const user = document.getElementById('user')
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const subscription = document.getElementsByClassName('subscription');
+const conditions = document.getElementById('conditions');
+const newsletter = document.getElementById('newsletter');
+
+
 
 form.addEventListener('submit', (event) => {
     if (!validateForm()) {

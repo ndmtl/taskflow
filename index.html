@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskFlow, une plateforme indispensable pour créer des projets efficaces</title>
+    <title>Inscription | TaskFlow, une plateforme pour créer des projets efficaces</title>
     <meta name="description"
         content="TaskFlow est une plateforme web en mode SaaS (Software as a Service) qui permet aux équipes de gérer des projets.">
 
@@ -18,18 +18,32 @@
 </head>
 
 <body>
-    <!--Création du form avec novalidate qui empêche la validation des champs en html5-->
+
     <main>
         <section>
             <div class="container">
                 <h1>Création de compte</h1>
+                <!--Création du form avec novalidate qui empêche la validation des champs en html5-->
                 <form id="form" action="confirmation.html" method="get" novalidate>
-                    <fieldset>
-                        <legend>Case 1</legend>
+                    <fieldset class="form-step active">
+                        <p>Tous les champs suivis de * sont obligatoires</p>
+
+                        <!--Infos perso-->
+                        <legend>Informations personnelles</legend>
                         <div class="inputControl">
-                            <label for="userName">Nom d'utilisateur*</label>
-                            <input id="userName" name="userName" type="text" minlength="5" maxlength="12"
-                                placeholder="Nom d'utilisateur (entre 5 et 12 lettres)" required>
+                            <label for="firstName">Prénom*</label>
+                            <input id="firstName" name="firstName" type="text" minlength="5" placeholder="prénom"
+                                required>
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputControl">
+                            <label for="lastName">Nom</label>
+                            <input id="lastName" name="lastName" type="text" minlength="5" placeholder="nom" required>
+                            <div class="errorMessage"></div>
+                        </div>
+                        <div class="inputControl">
+                            <label for="phone">Téléphone</label>
+                            <input id="phone" name="phone" type="tel" placeholder="xxx xxx-xxxx">
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputControl">
@@ -37,25 +51,114 @@
                             <input id="email" name="email" type="email" placeholder="nom@domaine.com" required>
                             <div class="errorMessage"></div>
                         </div>
+                        <button type="button" class="btn-next">Suivant</button>
                     </fieldset>
-                    <fieldset>
-                        <legend>Case 2</legend>
+
+                    <!--Infos entreprise-->
+                    <fieldset class="form-step">
+                        <legend>Informations sur l'entreprise</legend>
+                        <div class="inputControl">
+                            <label for="business">Nom de l'entreprise ou organisation*</label>
+                            <input id="business" name="business" type="text" placeholder="Nom de l'entreprise" required>
+                            <div class="errorMessage"></div>
+                        </div>
+                        <!--Select-->
+                        <div class="inputControl">
+                            <label for="activity">Secteur d'activité*</label>
+                            <select name="activity" id="activity" required>
+                                <option value="">--Choisir une option--</option>
+                                <option value="technique">Technique</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="finance">Finance</option>
+                                <option value="santé">Santé</option>
+                                <option value="éducation">Éducation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                            <div class="errorMessage"></div>
+                        </div>
+                        <!--Select-->
+                        <!--Radio-->
+                        <div class="inputControl">
+                            <label>Taille de l'équipe</label>
+                            <div>
+                                <input type="radio" id="size1" name="teamSize" value="1" required>
+                                <label for="size1">1 personne</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="size2_10" name="teamSize" value="2-10">
+                                <label for="size2_10">2-10 personnes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="size11_50" name="teamSize" value="11-50">
+                                <label for="size11_50">11-50 personnes</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="size51" name="teamSize" value="51+">
+                                <label for="size51">Plus de 51 personnes</label>
+                            </div>
+                            <div class="errorMessage"></div>
+                        </div>
+                        <!--Radio-->
+                        <div class="inputControl">
+                            <label for="website">Site Internet</label>
+                            <input id="website" name="website" type="url">
+                            <div class="errorMessage"></div>
+                        </div>
+                        <button type="button" class="btn-next">Suivant</button>
+                    </fieldset>
+                    <!--Infos compte-->
+                    <fieldset class="form-step">
+                        <legend>Paramètres de compte</legend>
+                        <div class="inputControl">
+                            <label for="user">Nom d'utilisateur*
+                                <span>Minimum 8 caractères</span>
+                            </label>
+                            <input id="user" name="user" type="text" placeholder="Utilisateur/trice" minlength="8"
+                                required>
+                            <div class="errorMessage"></div>
+                        </div>
                         <div class="inputControl">
                             <label for="password">Votre mot de passe*
                                 <span>Minimum 8 caractères, une majuscule, un caractère spécial</span>
                             </label>
                             <input id="password" name="password" type="password" placeholder="*********" minlength="8"
                                 required>
-                            <div class="errorMessage"></div>
+                            <div class="errorMessage"><span></span></div>
                         </div>
                         <div class="inputControl">
                             <label for="password2">Retapez votre mot de passe*</label>
                             <input id="password2" name="password2" type="password" placeholder="*********" required>
                             <div class="errorMessage"></div>
                         </div>
-                    </fieldset>
-                    <button type="submit">Soumettre</button>
-                </form>
+                        <div class="inputControl">
+                            <label for="subscription">Plan choisi*</label>
+                            <div>
+                                <input type="radio" id="free" name="subscription" value="free">
+                                <label for="free">Gratuit</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="pro" name="subscription" value="pro">
+                                <label for="pro">Pro (9.99/mois)</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="entreprise" name="subscription" value="entreprise">
+                                <label for="entreprise">Entreprise (29,99 $/mois)</label>
+                            </div>
+                        </div>
+                        <div clas="inputControl">
+                            <input type="checkbox" id="conditions" required>
+                            <label for="conditions">J'accepte les conditions d'utilisation*</label>
+                        </div>
+                        <div clas="inputControl">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Je souhaite recevoir les nouveautés et offres par courriel</label>
+                        </div>
+                        <button type="submit">Soumettre</button>
+            </div>
+            </fieldset>
+
+
+            </form>
             </div>
         </section>
     </main>
