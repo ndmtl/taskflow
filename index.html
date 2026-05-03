@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Favicon-->
-    <link rel="icon" type="image/png" href="tasflow-icon.png" />
+    <link rel="icon" type="image/png" href="tasflow-icon.png">
     <!--JS-->
     <script src="assets/js/validation.js" defer></script>
 </head>
@@ -26,10 +26,11 @@
                 <!--Création du form avec novalidate qui empêche la validation des champs en html5-->
                 <form id="form" action="confirmation.html" method="get" novalidate>
                     <fieldset id="step1" class="form-step active">
+                        <legend>Informations personnelles</legend>
                         <p>Tous les champs suivis de * sont obligatoires</p>
 
                         <!--Infos perso-->
-                        <legend>Informations personnelles</legend>
+
                         <div class="inputControl">
                             <label for="firstName">Prénom*</label>
                             <input id="firstName" name="firstName" type="text" minlength="5" placeholder="prénom"
@@ -132,7 +133,7 @@
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputControl">
-                            <label for="subscription">Plan choisi*</label>
+                            <label>Plan choisi*</label>
                             <div>
                                 <input type="radio" id="free" name="subscription" value="free">
                                 <label for="free">Gratuit</label>
@@ -145,21 +146,29 @@
                                 <input type="radio" id="entreprise" name="subscription" value="entreprise">
                                 <label for="entreprise">Entreprise (29,99 $/mois)</label>
                             </div>
+                            <div class="errorMessage"></div>
                         </div>
-                        <div clas="inputControl">
-                            <input type="checkbox" id="conditions" required>
-                            <label for="conditions">J'accepte les conditions d'utilisation*</label>
+                        <div class="inputControl">
+                            <div>
+                                <input type="checkbox" id="conditions" required>
+                                <label for="conditions">J'accepte les <a href="conditions-utilisation.html"
+                                        target="_blank">conditions d'utilisation*</a></label>
+                            </div>
+                            <div class="errorMessage"></div>
                         </div>
-                        <div clas="inputControl">
-                            <input type="checkbox" id="newsletter">
-                            <label for="newsletter">Je souhaite recevoir les nouveautés et offres par courriel</label>
+                        <div class="inputControl">
+                            <div>
+                                <input type="checkbox" id="newsletter">
+                                <label for="newsletter">Je souhaite recevoir les nouveautés et offres par
+                                    courriel</label>
+                            </div>
                         </div>
-                        <button type="submit" id="button3">Soumettre</button>
-            </div>
-            </fieldset>
+                        <button type="submit">Soumettre</button>
+
+                    </fieldset>
 
 
-            </form>
+                </form>
             </div>
         </section>
     </main>
