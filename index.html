@@ -25,7 +25,7 @@
                 <h1>Création de compte</h1>
                 <!--Création du form avec novalidate qui empêche la validation des champs en html5-->
                 <form id="form" action="confirmation.html" method="get" novalidate>
-                    <fieldset class="form-step active">
+                    <fieldset id="step1" class="form-step active">
                         <p>Tous les champs suivis de * sont obligatoires</p>
 
                         <!--Infos perso-->
@@ -37,13 +37,14 @@
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputControl">
-                            <label for="lastName">Nom</label>
+                            <label for="lastName">Nom*</label>
                             <input id="lastName" name="lastName" type="text" minlength="5" placeholder="nom" required>
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputControl">
-                            <label for="phone">Téléphone</label>
-                            <input id="phone" name="phone" type="tel" placeholder="xxx xxx-xxxx">
+                            <label for="phone">Téléphone*</label>
+                            <input id="phone" name="phone" type="tel" placeholder="xxx xxx-xxxx" maxlength="10"
+                                required>
                             <div class="errorMessage"></div>
                         </div>
                         <div class="inputControl">
@@ -51,11 +52,11 @@
                             <input id="email" name="email" type="email" placeholder="nom@domaine.com" required>
                             <div class="errorMessage"></div>
                         </div>
-                        <button type="button" class="btn-next">Suivant</button>
+                        <button type="button" id="button1" class="btn-next">Suivant</button>
                     </fieldset>
 
                     <!--Infos entreprise-->
-                    <fieldset class="form-step">
+                    <fieldset id="step2" class="form-step">
                         <legend>Informations sur l'entreprise</legend>
                         <div class="inputControl">
                             <label for="business">Nom de l'entreprise ou organisation*</label>
@@ -104,10 +105,10 @@
                             <input id="website" name="website" type="url">
                             <div class="errorMessage"></div>
                         </div>
-                        <button type="button" class="btn-next">Suivant</button>
+                        <button type="button" id="button2" class="btn-next">Suivant</button>
                     </fieldset>
                     <!--Infos compte-->
-                    <fieldset class="form-step">
+                    <fieldset id="step3" class="form-step">
                         <legend>Paramètres de compte</legend>
                         <div class="inputControl">
                             <label for="user">Nom d'utilisateur*
@@ -153,7 +154,7 @@
                             <input type="checkbox" id="newsletter">
                             <label for="newsletter">Je souhaite recevoir les nouveautés et offres par courriel</label>
                         </div>
-                        <button type="submit">Soumettre</button>
+                        <button type="submit" id="button3">Soumettre</button>
             </div>
             </fieldset>
 

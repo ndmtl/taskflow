@@ -75,7 +75,7 @@ input {
 
 input:focus {
     border: var(--color-4) 1px solid;
-    transform: scale(1.1);
+    transform: scale(1.015);
 }
 
 button {
