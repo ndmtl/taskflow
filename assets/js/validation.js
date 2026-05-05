@@ -19,10 +19,10 @@ const conditions = document.getElementById('conditions');
 const step1 = document.getElementById('step1');
 const step2 = document.getElementById('step2');
 const step3 = document.getElementById('step3');
-//Boutons
-const button1 = document.getElementById('button1');
-const button2 = document.getElementById('button2');
 
+//Boutons
+const buttonNext1 = document.getElementById('buttonNext1');
+const buttonNext2 = document.getElementById('buttonNext2');
 
 const validateStep1 = () => {
     let noError = true;
@@ -31,7 +31,6 @@ const validateStep1 = () => {
     const lastNameValue = lastName.value.trim().toLowerCase();
     const phoneValue = phone.value.trim();
     const emailValue = email.value.trim().toLowerCase();
-
 
     // //Validation du prénonom
     if (firstNameValue === '') {
@@ -74,7 +73,10 @@ const validateStep1 = () => {
     }
     if (noError === true) {
         steps(step1, step2);
+        nextTab();
+
     }
+
 }
 const validateStep2 = () => {
     let noError = true;
@@ -115,6 +117,7 @@ const validateStep2 = () => {
 
     if (noError === true) {
         steps(step2, step3);
+        nextTab();
     }
 }
 const validateForm = () => {
@@ -152,6 +155,7 @@ const validateForm = () => {
     } else {
         setSuccess(password2);
     }
+
     //Validation de l'abonnement
     let radioSelected = false;
 
@@ -166,25 +170,23 @@ const validateForm = () => {
     } else {
         setSuccess(subscription[0]);
     }
-    // Validation des conditions
 
+    // Validation des conditions d'utilisations
     if (!conditions.checked) {
         setError(conditions, "Vous devez accepter les conditions d'utilisation");
         noError = false;
     } else {
         setSuccess(conditions);
     }
-    if (noError === true) {
-        steps(step2, step3);
-    }
-    return noError; // ← ici
+
+    return noError;
 }
-button1.addEventListener('click', (event) => {
+buttonNext1.addEventListener('click', (event) => {
     event.preventDefault();
     validateStep1();
 });
 
-button2.addEventListener('click', (event) => {
+buttonNext2.addEventListener('click', (event) => {
     event.preventDefault();
     validateStep2();
 });
@@ -241,7 +243,18 @@ function setSuccess(element) {
     inputControl.classList.add('success');
 }
 
+const tabs = document.querySelectorAll(".tabs_element");
+let currentStep = 0;
+
+function nextTab() {
+    if (currentStep < tabs.length - 1) {
+        currentStep++;
+        tabs[currentStep].classList.add("active");
+    }
+}
+
 function steps(previousStep, nextStep) {
     previousStep.classList.remove('active');
     nextStep.classList.add('active')
 }
+
