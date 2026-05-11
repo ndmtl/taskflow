@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription | TaskFlow, une plateforme pour créer des projets efficaces</title>
+    <meta name="description"
+        content="TaskFlow est une plateforme web en mode SaaS (Software as a Service) qui permet aux équipes de gérer des projets.">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" href="assets/img/taskflow_favicon.png">
+    <!--JS-->
+    <script src="assets/js/validation.js" defer></script>
+</head>
+
+<body>
+    <!--Header-->
+    <header class="bg-color-1">
+        <div class="container">
+            <nav flex flex-between">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/taskflow_logo.png" alt="Logo TaskFlow">
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav__item"><a href="#" class="nav--link">Services</a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">Prix</a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">À propos</a></li>
+                    <li class="nav__item  nav__item--active"><a href="#" class="nav--link">S'inscrire</a></i> </li>
+                    <li class="nav__item--login"><a href="#" class="nav--link"><i class="fa-solid fa-circle-user"
+                                aria-hidden="true"></i>Se
+                            connecter</a>
+                    </li>
+                </ul>
+
+                <!--Toggle-->
+                <ul class="toggle">
+                    <li class="hamburger"><span></span></li>
+                </ul>
+                <!--Toggle-->
+            </nav>
+        </div>
+    </header>
+    <!--Header-->
+    <main>
+        <section>
+            <div class="container">
+                <div class="content">
+                    <div class="content_intro">
+                        <h1>Création de compte</h1>
+                        <p> Vous avez déjà un compte ? <a href="">Connectez‑vous pour continuer.</a></p>
+                        <p>Vous n’avez pas encore de compte ? Inscrivez‑vous en remplissant le formulaire ci-contre,
+                            pour accéder à l’ensemble de nos services.</p>
+
+                    </div>
+
+                    <form id="form" action="confirmation.html" method="get" novalidate>
+                        <ul id="tabs" class="tabs">
+                            <li class="tabs_element active">Informations personnelles</li>
+                            <li class="tabs_element">Informations sur l'entreprise</li>
+                            <li class="tabs_element">Paramètres du compte</li>
+                        </ul>
+                        <fieldset id="step1" class="form-step active">
+                            <legend class="sr-only">Informations personnelles</legend>
+                            <p>Tous les champs suivis de * sont obligatoires</p>
+
+                            <!--Infos perso-->
+
+                            <div class="inputControl">
+                                <label for="firstName">Prénom*</label>
+                                <input id="firstName" name="firstName" type="text" minlength="5" placeholder="prénom"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <label for="lastName">Nom*</label>
+                                <input id="lastName" name="lastName" type="text" minlength="5" placeholder="nom"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <label for="phone">Téléphone*</label>
+                                <input id="phone" name="phone" type="tel" placeholder="xxx xxx-xxxx" maxlength="10"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <label for="email">Courriel*</label>
+                                <input id="email" name="email" type="email" placeholder="nom@domaine.com" required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="button_group--first">
+                                <button type="button" id="buttonNext1">Suivant</button>
+                            </div>
+                        </fieldset>
+
+                        <!--Infos entreprise-->
+                        <fieldset id="step2" class="form-step">
+                            <legend class="sr-only">Informations sur l'entreprise</legend>
+                            <div class="inputControl">
+                                <label for="business">Nom de l'entreprise ou organisation*</label>
+                                <input id="business" name="business" type="text" placeholder="Nom de l'entreprise"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <!--Select-->
+                            <div class="inputControl">
+                                <label for="activity">Secteur d'activité*</label>
+                                <select name="activity" id="activity" required>
+                                    <option value="">--Choisir une option--</option>
+                                    <option value="technique">Technique</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="finance">Finance</option>
+                                    <option value="santé">Santé</option>
+                                    <option value="éducation">Éducation</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <!--Select-->
+                            <!--Radio-->
+                            <div class="inputControl">
+                                <label>Taille de l'entreprise*</label>
+                                <div>
+                                    <input type="radio" id="size1" name="teamSize" value="1" required>
+                                    <label for="size1">1 personne</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="size2_10" name="teamSize" value="2-10">
+                                    <label for="size2_10">2-10 personnes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="size11_50" name="teamSize" value="11-50">
+                                    <label for="size11_50">11-50 personnes</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="size51" name="teamSize" value="51+">
+                                    <label for="size51">Plus de 51 personnes</label>
+                                </div>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <!--Radio-->
+                            <div class="inputControl">
+                                <label for="website">Site Internet</label>
+                                <input id="website" name="website" type="url" placeholder="https://www.ndd.com">
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="button_group">
+                                <button type="button" id="buttonPrevious">Précédent</button>
+                                <button type="button" id="buttonNext2">Suivant</button>
+                            </div>
+                        </fieldset>
+                        <!--Infos compte-->
+                        <fieldset id="step3" class="form-step">
+                            <legend class="sr-only">Paramètres de compte</legend>
+                            <div class="inputControl">
+                                <label for="user">Nom d'utilisateur*
+                                    <span>Minimum 8 caractères</span>
+                                </label>
+                                <input id="user" name="user" type="text" placeholder="Utilisateur/trice" minlength="8"
+                                    required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <label for="password">Votre mot de passe*
+                                    <span>Minimum 8 caractères, une majuscule, un caractère spécial</span>
+                                </label>
+                                <input id="password" name="password" type="password" placeholder="*********"
+                                    minlength="8" required>
+                                <div class="errorMessage"><span></span></div>
+                            </div>
+                            <div class="inputControl">
+                                <label for="password2">Retapez votre mot de passe*</label>
+                                <input id="password2" name="password2" type="password" placeholder="*********" required>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <label>Plan choisi*</label>
+                                <div>
+                                    <input type="radio" id="free" name="subscription" value="free">
+                                    <label for="free">Gratuit</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="pro" name="subscription" value="pro">
+                                    <label for="pro">Pro (9,99/mois)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="entreprise" name="subscription" value="entreprise">
+                                    <label for="entreprise">Entreprise (29,99 $/mois)</label>
+                                </div>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <div>
+                                    <input type="checkbox" id="conditions" required>
+                                    <label for="conditions">J'accepte les <a href="conditions-utilisation.html"
+                                            target="_blank">conditions d'utilisation*</a></label>
+                                </div>
+                                <div class="errorMessage"></div>
+                            </div>
+                            <div class="inputControl">
+                                <div>
+                                    <input type="checkbox" id="newsletter">
+                                    <label for="newsletter">Je souhaite recevoir les nouveautés et offres par
+                                        courriel</label>
+                                </div>
+                            </div>
+                            <div class="button_group">
+                                <button type="button" id="buttonPrevious2">Précédent</button>
+                                <button type="submit">Soumettre</button>
+                            </div>
+
+                        </fieldset>
+
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <section>
+            <div class="container">
+                <div class="footer__row">
+                    <div>
+                        <img src="assets/img/illustration_v2.png" style="max-width: 300px;"
+                            alt="Illustration : personne devant un ordinateur">
+                    </div>
+                    <div class="footer__motto">
+                        <span>Libérez </span><span>votre</span>
+                        <span class="motto--colored">potentiel</span>
+                    </div>
+
+                    <div class="footer__contact">
+
+                        <p class="contact--little">Appelez-nous dès aujourd'hui : </p>
+                        <p class="contact--large"><a href="tel:5146578888">514 657-8888</a></p>
+                        <ul class="contact--icon">
+                            <!--Icon1-->
+                            <li>
+                                <!--Linkedin-->
+                                <a href=" #" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in" aria-hidden=" true"></i>
+                                </a>
+                                <!--Linkedin-->
+                            </li>
+                            <!--Icon1-->
+
+                            <!--Icon2-->
+                            <li>
+                                <!--Instagram-->
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                                </a>
+                                <!--Instagram-->
+                            </li>
+                            <!--Icon2-->
+
+                            <!--Icon3-->
+                            <li>
+                                <!--TikTok-->
+                                <a href="#" aria-label="TikTok">
+                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                                </a>
+                                <!--TikTok-->
+                            </li>
+                            <!--Icon3-->
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="footer__row">
+                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>
