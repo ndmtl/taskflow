@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditions d'utilisation | TaskFlow, une plateforme pour créer des projets efficaces</title>
+    <title>Inscription | TaskFlow, une plateforme pour créer des projets efficaces</title>
     <meta name="description"
         content="TaskFlow est une plateforme web en mode SaaS (Software as a Service) qui permet aux équipes de gérer des projets.">
 
@@ -15,33 +15,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="assets/img/taskflow_favicon.png">
-
-
+    <!--JS-->
+    <script src="assets/js/validation.js" defer></script>
 </head>
 
 <body>
     <!--Header-->
-    <header class="bg-color-1">
+    <header>
         <div class="container">
-            <nav flex flex-between">
-                <div class="logo">
+
+            <nav class="nav">
+                <div>
                     <a href="index.html">
-                        <img src="assets/img/taskflow_logo.png" alt="Logo TaskFlow">
+                        <img src="assets/img/taskflow_logo.png" class="logo__img" alt="Logo TaskFlow">
                     </a>
                 </div>
-                <ul class="nav">
-                    <li class="nav__item"><a href="#" class="nav--link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">Prix</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">À propos</a></li>
-                    <li class="nav__item  nav__item--active"><a href="#" class="nav--link">S'inscrire</a></i> </li>
-                    <li class="nav__item--login"><a href="#" class="nav--link"><i class="fa-solid fa-circle-user"
-                                aria-hidden="true"></i>Se
-                            connecter</a>
+
+                <ul class="nav__list">
+
+                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Prix</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+
+                    <li class="nav__item nav__item--active"><a href="#" class="nav__link">S'inscrire</a></li>
+
+                    <li class="nav__item nav__item--login">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-circle-user nav__icon" aria-hidden="true"></i>Se connecter
+                        </a>
                     </li>
                 </ul>
 
-                <!--Toggle-->
-                <ul class="toggle">
+
+                <ul class="nav__toggle">
                     <li class="hamburger"><span></span></li>
                 </ul>
                 <!--Toggle-->
@@ -106,52 +112,42 @@
                         <img src="assets/img/illustration_v2.png" style="max-width: 300px;"
                             alt="Illustration : personne devant un ordinateur">
                     </div>
+
+
                     <div class="footer__motto">
-                        <span>Libérez </span><span>votre</span>
-                        <span class="motto--colored">potentiel</span>
+                        <span class="footer__motto-line">Libérez </span>
+                        <span class="footer__motto-line">votre</span>
+                        <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
                     </div>
 
                     <div class="footer__contact">
 
-                        <p class="contact--little">Appelez-nous dès aujourd'hui : </p>
-                        <p class="contact--large"><a href="tel:5146578888">514 657-8888</a></p>
-                        <ul class="contact--icon">
-                            <!--Icon1-->
-                            <li>
-                                <!--Linkedin-->
-                                <a href=" #" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in" aria-hidden=" true"></i>
-                                </a>
-                                <!--Linkedin-->
-                            </li>
-                            <!--Icon1-->
+                        <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
 
-                            <!--Icon2-->
-                            <li>
-                                <!--Instagram-->
-                                <a href="#" aria-label="Instagram">
+                        <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
+
+                        <ul class="footer__contact-icons">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
                                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <!--Instagram-->
                             </li>
-                            <!--Icon2-->
-
-                            <!--Icon3-->
-                            <li>
-                                <!--TikTok-->
-                                <a href="#" aria-label="TikTok">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
                                     <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                                 </a>
-                                <!--TikTok-->
                             </li>
-                            <!--Icon3-->
                         </ul>
-
                     </div>
-
                 </div>
+
                 <div class="footer__row">
-                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
                 </div>
             </div>
         </section>

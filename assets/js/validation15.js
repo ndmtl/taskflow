@@ -1,4 +1,4 @@
-
+console.log('script chargé ✅');
 //Infos perso
 const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');

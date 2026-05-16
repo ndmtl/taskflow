@@ -21,27 +21,33 @@
 
 <body>
     <!--Header-->
-    <header class="bg-color-1">
+    <header>
         <div class="container">
-            <nav flex flex-between">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="assets/img/taskflow_logo.png" alt="Logo TaskFlow">
+
+            <nav class="nav">
+                <div>
+                    <a href="inscription.html">
+                        <img src="assets/img/taskflow_logo.png" class="logo__img" alt="Logo TaskFlow">
                     </a>
                 </div>
-                <ul class="nav">
-                    <li class="nav__item"><a href="#" class="nav--link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">Prix</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">À propos</a></li>
-                    <li class="nav__item  nav__item--active"><a href="#" class="nav--link">S'inscrire</a></i> </li>
-                    <li class="nav__item--login"><a href="#" class="nav--link"><i class="fa-solid fa-circle-user"
-                                aria-hidden="true"></i>Se
-                            connecter</a>
+
+                <ul class="nav__list">
+
+                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Prix</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+
+                    <li class="nav__item nav__item--active"><a href="#" class="nav__link">S'inscrire</a></li>
+
+                    <li class="nav__item nav__item--login">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-circle-user nav__icon" aria-hidden="true"></i>Se connecter
+                        </a>
                     </li>
                 </ul>
 
-                <!--Toggle-->
-                <ul class="toggle">
+
+                <ul class="nav__toggle">
                     <li class="hamburger"><span></span></li>
                 </ul>
                 <!--Toggle-->
@@ -49,71 +55,83 @@
         </div>
     </header>
     <!--Header-->
+
     <main>
         <section>
             <div class="container">
                 <div class="content">
-                    <div class="content_intro">
-                        <h1>Création de compte</h1>
-                        <p> Vous avez déjà un compte ? <a href="">Connectez‑vous pour continuer.</a></p>
-                        <p>Vous n’avez pas encore de compte ? Inscrivez‑vous en remplissant le formulaire ci-contre,
-                            pour accéder à l’ensemble de nos services.</p>
 
+                    <div class="content__intro">
+                        <h1>Création de compte</h1>
+                        <p>Vous avez déjà un compte ? <a href="">Connectez‑vous pour continuer.</a></p>
+                        <p>Vous n'avez pas encore de compte ? Inscrivez‑vous en remplissant le formulaire ci-contre,
+                            pour accéder à l'ensemble de nos services.</p>
                     </div>
 
-                    <form id="form" action="confirmation.html" method="get" novalidate>
+
+                    <form id="form" class="form" action="confirmation.html" method="get" novalidate>
+
+
                         <ul id="tabs" class="tabs">
-                            <li class="tabs_element active">Informations personnelles</li>
-                            <li class="tabs_element">Informations sur l'entreprise</li>
-                            <li class="tabs_element">Paramètres du compte</li>
+                            <li class="tabs__item tabs__item--active">Informations personnelles</li>
+                            <li class="tabs__item">Informations sur l'entreprise</li>
+                            <li class="tabs__item">Paramètres du compte</li>
                         </ul>
-                        <fieldset id="step1" class="form-step active">
+
+
+                        <fieldset id="step1" class="form__fieldset form__step form__step--active">
                             <legend class="sr-only">Informations personnelles</legend>
                             <p>Tous les champs suivis de * sont obligatoires</p>
 
-                            <!--Infos perso-->
 
-                            <div class="inputControl">
-                                <label for="firstName">Prénom*</label>
-                                <input id="firstName" name="firstName" type="text" minlength="5" placeholder="prénom"
-                                    required>
-                                <div class="errorMessage"></div>
+                            <div class="input-control">
+                                <label class="input-control__label" for="firstName">Prénom*</label>
+                                <input class="input-control__field" id="firstName" name="firstName" type="text"
+                                    minlength="5" placeholder="prénom" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
-                                <label for="lastName">Nom*</label>
-                                <input id="lastName" name="lastName" type="text" minlength="5" placeholder="nom"
-                                    required>
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="lastName">Nom*</label>
+                                <input class="input-control__field" id="lastName" name="lastName" type="text"
+                                    minlength="5" placeholder="nom" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
-                                <label for="phone">Téléphone*</label>
-                                <input id="phone" name="phone" type="tel" placeholder="xxx xxx-xxxx" maxlength="10"
-                                    required>
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="phone">Téléphone*</label>
+                                <input class="input-control__field" id="phone" name="phone" type="tel"
+                                    placeholder="xxx xxx-xxxx" maxlength="10" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
-                                <label for="email">Courriel*</label>
-                                <input id="email" name="email" type="email" placeholder="nom@domaine.com" required>
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="email">Courriel*</label>
+                                <input class="input-control__field" id="email" name="email" type="email"
+                                    placeholder="nom@domaine.com" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="button_group--first">
-                                <button type="button" id="buttonNext1">Suivant</button>
+
+                            <div class="button-group button-group--end">
+                                <button class="button" type="button" id="buttonNext1">Suivant</button>
                             </div>
                         </fieldset>
 
                         <!--Infos entreprise-->
-                        <fieldset id="step2" class="form-step">
+                        <fieldset id="step2" class="form__fieldset form__step">
                             <legend class="sr-only">Informations sur l'entreprise</legend>
-                            <div class="inputControl">
-                                <label for="business">Nom de l'entreprise ou organisation*</label>
-                                <input id="business" name="business" type="text" placeholder="Nom de l'entreprise"
-                                    required>
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="business">Nom de l'entreprise ou
+                                    organisation*</label>
+                                <input class="input-control__field" id="business" name="business" type="text"
+                                    placeholder="Nom de l'entreprise" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <!--Select-->
-                            <div class="inputControl">
-                                <label for="activity">Secteur d'activité*</label>
-                                <select name="activity" id="activity" required>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="activity">Secteur d'activité*</label>
+                                <select class="input-control__field" name="activity" id="activity" required>
                                     <option value="">--Choisir une option--</option>
                                     <option value="technique">Technique</option>
                                     <option value="marketing">Marketing</option>
@@ -122,12 +140,11 @@
                                     <option value="éducation">Éducation</option>
                                     <option value="autre">Autre</option>
                                 </select>
-                                <div class="errorMessage"></div>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <!--Select-->
-                            <!--Radio-->
-                            <div class="inputControl">
-                                <label>Taille de l'entreprise*</label>
+
+                            <div class="input-control">
+                                <label class="input-control__label">Taille de l'entreprise*</label>
                                 <div>
                                     <input type="radio" id="size1" name="teamSize" value="1" required>
                                     <label for="size1">1 personne</label>
@@ -144,45 +161,56 @@
                                     <input type="radio" id="size51" name="teamSize" value="51+">
                                     <label for="size51">Plus de 51 personnes</label>
                                 </div>
-                                <div class="errorMessage"></div>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <!--Radio-->
-                            <div class="inputControl">
-                                <label for="website">Site Internet</label>
-                                <input id="website" name="website" type="url" placeholder="https://www.ndd.com">
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="website">Site Internet</label>
+                                <input class="input-control__field" id="website" name="website" type="url"
+                                    placeholder="https://www.ndd.com">
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="button_group">
-                                <button type="button" id="buttonPrevious">Précédent</button>
-                                <button type="button" id="buttonNext2">Suivant</button>
+
+
+                            <div class="button-group">
+                                <button class="button" type="button" id="buttonPrevious1">Précédent</button>
+                                <button class="button" type="button" id="buttonNext2">Suivant</button>
                             </div>
                         </fieldset>
+
                         <!--Infos compte-->
-                        <fieldset id="step3" class="form-step">
+                        <fieldset id="step3" class="form__fieldset form__step">
                             <legend class="sr-only">Paramètres de compte</legend>
-                            <div class="inputControl">
-                                <label for="user">Nom d'utilisateur*
-                                    <span>Minimum 8 caractères</span>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="user">Nom d'utilisateur*
+
+                                    <span class="input-control__hint">Minimum 8 caractères</span>
                                 </label>
-                                <input id="user" name="user" type="text" placeholder="Utilisateur/trice" minlength="8"
-                                    required>
-                                <div class="errorMessage"></div>
+                                <input class="input-control__field" id="user" name="user" type="text"
+                                    placeholder="Utilisateur/trice" minlength="8" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
-                                <label for="password">Votre mot de passe*
-                                    <span>Minimum 8 caractères, une majuscule, un caractère spécial</span>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="password">Votre mot de passe*
+                                    <span class="input-control__hint">Minimum 8 caractères, une majuscule, un caractère
+                                        spécial</span>
                                 </label>
-                                <input id="password" name="password" type="password" placeholder="*********"
-                                    minlength="8" required>
-                                <div class="errorMessage"><span></span></div>
+                                <input class="input-control__field" id="password" name="password" type="password"
+                                    placeholder="*********" minlength="8" required>
+                                <div class="input-control__error-message"><span></span></div>
                             </div>
-                            <div class="inputControl">
-                                <label for="password2">Retapez votre mot de passe*</label>
-                                <input id="password2" name="password2" type="password" placeholder="*********" required>
-                                <div class="errorMessage"></div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="password2">Retapez votre mot de passe*</label>
+                                <input class="input-control__field" id="password2" name="password2" type="password"
+                                    placeholder="*********" required>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
-                                <label>Plan choisi*</label>
+
+                            <div class="input-control">
+                                <label class="input-control__label">Plan choisi*</label>
                                 <div>
                                     <input type="radio" id="free" name="subscription" value="free">
                                     <label for="free">Gratuit</label>
@@ -195,30 +223,31 @@
                                     <input type="radio" id="entreprise" name="subscription" value="entreprise">
                                     <label for="entreprise">Entreprise (29,99 $/mois)</label>
                                 </div>
-                                <div class="errorMessage"></div>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
+
+                            <div class="input-control">
                                 <div>
                                     <input type="checkbox" id="conditions" required>
                                     <label for="conditions">J'accepte les <a href="conditions-utilisation.html"
                                             target="_blank">conditions d'utilisation*</a></label>
                                 </div>
-                                <div class="errorMessage"></div>
+                                <div class="input-control__error-message"></div>
                             </div>
-                            <div class="inputControl">
+
+                            <div class="input-control">
                                 <div>
                                     <input type="checkbox" id="newsletter">
                                     <label for="newsletter">Je souhaite recevoir les nouveautés et offres par
                                         courriel</label>
                                 </div>
                             </div>
-                            <div class="button_group">
-                                <button type="button" id="buttonPrevious2">Précédent</button>
-                                <button type="submit">Soumettre</button>
+
+                            <div class="button-group">
+                                <button class="button" type="button" id="buttonPrevious2">Précédent</button>
+                                <button class="button" type="submit">Soumettre</button>
                             </div>
-
                         </fieldset>
-
 
                     </form>
                 </div>
@@ -231,55 +260,45 @@
             <div class="container">
                 <div class="footer__row">
                     <div>
-                        <img src="assets/img/illustration_v2.png" style="max-width: 300px;"
-                            alt="Illustration : personne devant un ordinateur">
+                        <img src="assets/img/illustration_v2.png""
+                            alt=" Illustration : personne devant un ordinateur">
                     </div>
+
+
                     <div class="footer__motto">
-                        <span>Libérez </span><span>votre</span>
-                        <span class="motto--colored">potentiel</span>
+                        <span class="footer__motto-line">Libérez </span>
+                        <span class="footer__motto-line">votre</span>
+                        <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
                     </div>
 
                     <div class="footer__contact">
 
-                        <p class="contact--little">Appelez-nous dès aujourd'hui : </p>
-                        <p class="contact--large"><a href="tel:5146578888">514 657-8888</a></p>
-                        <ul class="contact--icon">
-                            <!--Icon1-->
-                            <li>
-                                <!--Linkedin-->
-                                <a href=" #" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in" aria-hidden=" true"></i>
-                                </a>
-                                <!--Linkedin-->
-                            </li>
-                            <!--Icon1-->
+                        <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
 
-                            <!--Icon2-->
-                            <li>
-                                <!--Instagram-->
-                                <a href="#" aria-label="Instagram">
+                        <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
+
+                        <ul class="footer__contact-icons">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
                                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <!--Instagram-->
                             </li>
-                            <!--Icon2-->
-
-                            <!--Icon3-->
-                            <li>
-                                <!--TikTok-->
-                                <a href="#" aria-label="TikTok">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
                                     <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                                 </a>
-                                <!--TikTok-->
                             </li>
-                            <!--Icon3-->
                         </ul>
-
                     </div>
-
                 </div>
+
                 <div class="footer__row">
-                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
                 </div>
             </div>
         </section>

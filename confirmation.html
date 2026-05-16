@@ -15,33 +15,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="assets/img/taskflow_favicon.png">
-    <!--JS-->
-    <script src="assets/js/validation.js" defer></script>
+
 </head>
 
 <body>
     <!--Header-->
-    <header class="bg-color-1">
+    <header>
         <div class="container">
-            <nav flex flex-between">
-                <div class="logo">
+
+            <nav class="nav">
+                <div>
                     <a href="index.html">
-                        <img src="assets/img/taskflow_logo.png" alt="Logo TaskFlow">
+                        <img src="assets/img/taskflow_logo.png" class="logo__img" alt="Logo TaskFlow">
                     </a>
                 </div>
-                <ul class="nav">
-                    <li class="nav__item"><a href="#" class="nav--link">Services</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">Prix</a></li>
-                    <li class="nav__item"><a href="#" class="nav--link">À propos</a></li>
-                    <li class="nav__item  nav__item--active"><a href="#" class="nav--link">S'inscrire</a></i> </li>
-                    <li class="nav__item--login"><a href="#" class="nav--link"><i class="fa-solid fa-circle-user"
-                                aria-hidden="true"></i>Se
-                            connecter</a>
+
+                <ul class="nav__list">
+
+                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Prix</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+
+                    <li class="nav__item nav__item--active"><a href="#" class="nav__link">S'inscrire</a></li>
+
+                    <li class="nav__item nav__item--login">
+                        <a href="#" class="nav__link">
+                            <i class="fa-solid fa-circle-user nav__icon" aria-hidden="true"></i>Se connecter
+                        </a>
                     </li>
                 </ul>
 
-                <!--Toggle-->
-                <ul class="toggle">
+
+                <ul class="nav__toggle">
                     <li class="hamburger"><span></span></li>
                 </ul>
                 <!--Toggle-->
@@ -49,51 +54,51 @@
         </div>
     </header>
     <!--Header-->
+
     <main>
         <section>
             <div class="container">
                 <div class="content">
-                    <div class="content_intro">
-                        <h1>Inscription réussie</h1>
 
-                        <p>Profitez des outils de TaskFlow.</p>
+                    <div class="content__intro">
+                        <h1>Connexion au compte</h1>
+                        <p>Vous avez déjà un compte ? <a href="">Connectez‑vous pour continuer.</a></p>
 
                     </div>
 
-                    <form id="form" action="tableau-de-bord.html" method="get" novalidate>
 
-                        <fieldset>
-                            <legend class="sr-only">Se connecter</legend>
+                    <form id="form" class="form" action="#" method="get" novalidate>
 
+                        <!--Infos compte-->
+                        <fieldset id="step1" class="form__fieldset form__step form__step--active">
+                            <legend class="sr-only">Paramètres de compte</legend>
+                            <p>Votre compte a été créé. Vous pouvez désormais vous connecter et profiter de nos
+                                services.</p>
 
-                            <!--Infos perso-->
-
-                            <div class="inputControl">
-                                <label for="user">Nom d'utilisateur/courriel*</label>
-                                <input id="user" name="user" type="text" minlength="5"
-                                    placeholder="Nom d'utilisateur/courriel" required>
-                                <div class="errorMessage"></div>
-                            </div>
-                            <div class="inputControl">
-                                <label for="password">Votre mot de passe*
-                                    <span>Minimum 8 caractères, une majuscule, un caractère spécial</span>
+                            <div class="input-control">
+                                <label class="input-control__label" for="password">Votre mot de passe*
+                                    <span class="input-control__hint">Minimum 8 caractères, une majuscule, un caractère
+                                        spécial</span>
                                 </label>
-                                <input id="password" name="password" type="password" placeholder="*********"
-                                    minlength="8" required>
-                                <div class="errorMessage"><span></span></div>
+                                <input class="input-control__field" id="password" name="password" type="password"
+                                    placeholder="*********" minlength="8" required>
+                                <div class="input-control__error-message"><span></span></div>
                             </div>
-                            <div class="button_group--first">
-                                <button type="button" id="buttonNext1">Suivant</button>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="password2">Retapez votre mot de passe*</label>
+                                <input class="input-control__field" id="password2" name="password2" type="password"
+                                    placeholder="*********" required>
+                                <div class="input-control__error-message"></div>
+                            </div>
+
+
+
+                            <div class="button-group">
+                                <button class="button" type="button" id="buttonPrevious2">Précédent</button>
+                                <button class="button" type="submit">Soumettre</button>
                             </div>
                         </fieldset>
-
-
-
-                        <button type="submit">Soumettre</button>
-
-
-                        </fieldset>
-
 
                     </form>
                 </div>
@@ -109,52 +114,42 @@
                         <img src="assets/img/illustration_v2.png" style="max-width: 300px;"
                             alt="Illustration : personne devant un ordinateur">
                     </div>
+
+
                     <div class="footer__motto">
-                        <span>Libérez </span><span>votre</span>
-                        <span class="motto--colored">potentiel</span>
+                        <span class="footer__motto-line">Libérez </span>
+                        <span class="footer__motto-line">votre</span>
+                        <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
                     </div>
 
                     <div class="footer__contact">
 
-                        <p class="contact--little">Appelez-nous dès aujourd'hui : </p>
-                        <p class="contact--large"><a href="tel:5146578888">514 657-8888</a></p>
-                        <ul class="contact--icon">
-                            <!--Icon1-->
-                            <li>
-                                <!--Linkedin-->
-                                <a href=" #" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in" aria-hidden=" true"></i>
-                                </a>
-                                <!--Linkedin-->
-                            </li>
-                            <!--Icon1-->
+                        <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
 
-                            <!--Icon2-->
-                            <li>
-                                <!--Instagram-->
-                                <a href="#" aria-label="Instagram">
+                        <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
+
+                        <ul class="footer__contact-icons">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
                                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <!--Instagram-->
                             </li>
-                            <!--Icon2-->
-
-                            <!--Icon3-->
-                            <li>
-                                <!--TikTok-->
-                                <a href="#" aria-label="TikTok">
+                            <li class="footer__contact-icons__item">
+                                <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
                                     <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                                 </a>
-                                <!--TikTok-->
                             </li>
-                            <!--Icon3-->
                         </ul>
-
                     </div>
-
                 </div>
+
                 <div class="footer__row">
-                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
                 </div>
             </div>
         </section>
