@@ -1,29 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription | TaskFlow, une plateforme pour créer des projets efficaces</title>
+    <title>
+        Inscription | TaskFlow, une plateforme pour créer des projets efficaces
+    </title>
     <meta name="description"
         content="TaskFlow est une plateforme web en mode SaaS (Software as a Service) qui permet aux équipes de gérer des projets.">
 
     <!--Styles-->
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="assets/img/taskflow_favicon.png">
     <!--JS-->
-    <script src="assets/js/validation.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/validation.min.js" defer></script>
 </head>
 
 <body>
     <!--Header-->
     <header>
-        <div class="container">
-
+        <div class="container" role="banner">
             <nav class="nav">
                 <div>
                     <a href="inscription.html">
@@ -31,89 +33,106 @@
                     </a>
                 </div>
 
-                <ul class="nav__list">
-
-                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                <ul class="nav__list" id="navList">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Services</a>
+                    </li>
                     <li class="nav__item"><a href="#" class="nav__link">Prix</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">À propos</a>
+                    </li>
 
-                    <li class="nav__item nav__item--active"><a href="#" class="nav__link">S'inscrire</a></li>
+                    <li class="nav__item nav__item--active">
+                        <a href="inscription.html" class="nav__link">S'inscrire</a>
+                    </li>
 
                     <li class="nav__item nav__item--login">
                         <a href="#" class="nav__link">
                             <i class="fa-solid fa-circle-user nav__icon" aria-hidden="true"></i>Se connecter
                         </a>
                     </li>
+                    <li class="nav__item nav__item--phone">
+                        <a href="tel:5146578888" class="nav__link">514 657-8888</a>
+                    </li>
                 </ul>
 
-
-                <ul class="nav__toggle">
-                    <li class="hamburger"><span></span></li>
-                </ul>
+                <!--Toggle-->
+                <button class="nav__toggle-btn" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"
+                    aria-controls="nav-menu" type="button">
+                    <span class="nav__hamburger" aria-hidden="true"><span></span></span>
+                </button>
                 <!--Toggle-->
             </nav>
         </div>
     </header>
     <!--Header-->
-
+    <!--Main-->
     <main>
         <section>
             <div class="container">
                 <div class="content">
-
                     <div class="content__intro">
                         <h1>Création de compte</h1>
-                        <p>Vous avez déjà un compte ? <a href="">Connectez‑vous pour continuer.</a></p>
-                        <p>Vous n'avez pas encore de compte ? Inscrivez‑vous en remplissant le formulaire ci-contre,
-                            pour accéder à l'ensemble de nos services.</p>
+                        <p>
+                            Vous n'avez pas encore de compte ? Inscrivez‑vous en remplissant
+                            le formulaire ci-contre, pour accéder à l'ensemble de nos
+                            services.
+                        </p>
+                        <p>
+                            Vous avez déjà un compte ?
+                            <a href="#" class="text--link">Connectez‑vous pour continuer.</a>
+                        </p>
                     </div>
 
-
                     <form id="form" class="form" action="confirmation.html" method="get" novalidate>
-
-
                         <ul id="tabs" class="tabs">
-                            <li class="tabs__item tabs__item--active">Informations personnelles</li>
-                            <li class="tabs__item">Informations sur l'entreprise</li>
-                            <li class="tabs__item">Paramètres du compte</li>
+                            <li class="tabs__item tabs__item--active">
+                                <span class="tabs__item--rounded">1</span><span>Informations personnelles</span>
+                            </li>
+                            <li class="tabs__item">
+                                <span class="tabs__item--rounded">2</span><span>Informations sur l'entreprise</span>
+                            </li>
+                            <li class="tabs__item">
+                                <span class="tabs__item--rounded">3</span><span>Paramètres du compte</span>
+                            </li>
                         </ul>
 
-
+                        <!--Infos personnelles-->
                         <fieldset id="step1" class="form__fieldset form__step form__step--active">
                             <legend class="sr-only">Informations personnelles</legend>
                             <p>Tous les champs suivis de * sont obligatoires</p>
-
-
                             <div class="input-control">
                                 <label class="input-control__label" for="firstName">Prénom*</label>
                                 <input class="input-control__field" id="firstName" name="firstName" type="text"
-                                    minlength="5" placeholder="prénom" required>
-                                <div class="input-control__error-message"></div>
+                                    minlength="5" placeholder="prénom" aria-describedby="firstName-error" required>
+                                <div class="input-control__error-message" id="firstName-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
                                 <label class="input-control__label" for="lastName">Nom*</label>
                                 <input class="input-control__field" id="lastName" name="lastName" type="text"
-                                    minlength="5" placeholder="nom" required>
-                                <div class="input-control__error-message"></div>
+                                    minlength="5" placeholder="nom" aria-describedby="lastName-error" required>
+                                <div class="input-control__error-message" id="lastName-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
                                 <label class="input-control__label" for="phone">Téléphone*</label>
                                 <input class="input-control__field" id="phone" name="phone" type="tel"
-                                    placeholder="xxx xxx-xxxx" maxlength="10" required>
-                                <div class="input-control__error-message"></div>
+                                    placeholder="xxx xxx-xxxx" maxlength="10" aria-describedby="phone-error" required>
+                                <div class="input-control__error-message" id="phone-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
                                 <label class="input-control__label" for="email">Courriel*</label>
                                 <input class="input-control__field" id="email" name="email" type="email"
-                                    placeholder="nom@domaine.com" required>
-                                <div class="input-control__error-message"></div>
+                                    placeholder="nom@domaine.com" aria-describedby="email-error" required>
+                                <div class="input-control__error-message" id="email-error" aria-live="polite"></div>
                             </div>
 
                             <div class="button-group button-group--end">
-                                <button class="button" type="button" id="buttonNext1">Suivant</button>
+                                <button class="button" type="button" id="buttonNext1">
+                                    Suivant
+                                </button>
                             </div>
                         </fieldset>
 
@@ -125,13 +144,14 @@
                                 <label class="input-control__label" for="business">Nom de l'entreprise ou
                                     organisation*</label>
                                 <input class="input-control__field" id="business" name="business" type="text"
-                                    placeholder="Nom de l'entreprise" required>
-                                <div class="input-control__error-message"></div>
+                                    placeholder="Nom de l'entreprise" aria-describedby="business-error" required>
+                                <div class="input-control__error-message" id="business-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
                                 <label class="input-control__label" for="activity">Secteur d'activité*</label>
-                                <select class="input-control__field" name="activity" id="activity" required>
+                                <select class="input-control__field" name="activity" id="activity"
+                                    aria-describedby="activity-error" required>
                                     <option value="">--Choisir une option--</option>
                                     <option value="technique">Technique</option>
                                     <option value="marketing">Marketing</option>
@@ -140,11 +160,12 @@
                                     <option value="éducation">Éducation</option>
                                     <option value="autre">Autre</option>
                                 </select>
-                                <div class="input-control__error-message"></div>
+                                <div class="input-control__error-message" id="activity-error" aria-live="polite"></div>
                             </div>
 
-                            <div class="input-control">
-                                <label class="input-control__label">Taille de l'entreprise*</label>
+                            <div class="input-control" role="radiogroup" aria-labelledby="teamsize-label"
+                                aria-describedby="teamsize-error">
+                                <span class="input-control__label" id="teamsize-label">Taille de l'entreprise*</span>
                                 <div>
                                     <input type="radio" id="size1" name="teamSize" value="1" required>
                                     <label for="size1">1 personne</label>
@@ -161,7 +182,7 @@
                                     <input type="radio" id="size51" name="teamSize" value="51+">
                                     <label for="size51">Plus de 51 personnes</label>
                                 </div>
-                                <div class="input-control__error-message"></div>
+                                <div class="input-control__error-message" id="teamsize-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
@@ -171,10 +192,13 @@
                                 <div class="input-control__error-message"></div>
                             </div>
 
-
                             <div class="button-group">
-                                <button class="button" type="button" id="buttonPrevious1">Précédent</button>
-                                <button class="button" type="button" id="buttonNext2">Suivant</button>
+                                <button class="button" type="button" id="buttonPrevious1">
+                                    Précédent
+                                </button>
+                                <button class="button" type="button" id="buttonNext2">
+                                    Suivant
+                                </button>
                             </div>
                         </fieldset>
 
@@ -184,12 +208,12 @@
 
                             <div class="input-control">
                                 <label class="input-control__label" for="user">Nom d'utilisateur*
-
                                     <span class="input-control__hint">Minimum 8 caractères</span>
                                 </label>
                                 <input class="input-control__field" id="user" name="user" type="text"
-                                    placeholder="Utilisateur/trice" minlength="8" required>
-                                <div class="input-control__error-message"></div>
+                                    placeholder="Utilisateur/trice" minlength="8" aria-describedby="user-error"
+                                    required>
+                                <div class="input-control__error-message" id="user-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
@@ -198,19 +222,20 @@
                                         spécial</span>
                                 </label>
                                 <input class="input-control__field" id="password" name="password" type="password"
-                                    placeholder="*********" minlength="8" required>
-                                <div class="input-control__error-message"><span></span></div>
+                                    placeholder="*********" minlength="8" aria-describedby="password-error" required>
+                                <div class="input-control__error-message" id="password-error" aria-live="polite"></div>
                             </div>
 
                             <div class="input-control">
                                 <label class="input-control__label" for="password2">Retapez votre mot de passe*</label>
                                 <input class="input-control__field" id="password2" name="password2" type="password"
-                                    placeholder="*********" required>
-                                <div class="input-control__error-message"></div>
+                                    placeholder="*********" aria-describedby="password2-error" required>
+                                <div class="input-control__error-message" id="password2-error" aria-live="polite"></div>
                             </div>
 
-                            <div class="input-control">
-                                <label class="input-control__label">Plan choisi*</label>
+                            <div class="input-control" role="radiogroup" aria-labelledby="subscription-label"
+                                aria-describedby="subscription-error">
+                                <span class="input-control__label" id="subscription-label">Plan choisi*</span>
                                 <div>
                                     <input type="radio" id="free" name="subscription" value="free">
                                     <label for="free">Gratuit</label>
@@ -223,16 +248,19 @@
                                     <input type="radio" id="entreprise" name="subscription" value="entreprise">
                                     <label for="entreprise">Entreprise (29,99 $/mois)</label>
                                 </div>
-                                <div class="input-control__error-message"></div>
+                                <div class="input-control__error-message" id="subscription-error" aria-live="polite">
+                                </div>
                             </div>
 
                             <div class="input-control">
                                 <div>
-                                    <input type="checkbox" id="conditions" required>
-                                    <label for="conditions">J'accepte les <a href="conditions-utilisation.html"
-                                            target="_blank">conditions d'utilisation*</a></label>
+                                    <input type="checkbox" id="conditions" aria-describedby="conditions-error" required>
+                                    <label for="conditions">J'accepte les
+                                        <a href="conditions-utilisation.html" target="_blank">conditions
+                                            d'utilisation*</a></label>
                                 </div>
-                                <div class="input-control__error-message"></div>
+                                <div class="input-control__error-message" id="conditions-error" aria-live="polite">
+                                </div>
                             </div>
 
                             <div class="input-control">
@@ -244,65 +272,65 @@
                             </div>
 
                             <div class="button-group">
-                                <button class="button" type="button" id="buttonPrevious2">Précédent</button>
+                                <button class="button" type="button" id="buttonPrevious2">
+                                    Précédent
+                                </button>
                                 <button class="button" type="submit">Soumettre</button>
                             </div>
                         </fieldset>
-
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
+    <!--Main-->
+    <!--Footer-->
     <footer id="footer">
-        <section>
-            <div class="container">
-                <div class="footer__row">
-                    <div>
-                        <img src="assets/img/illustration_v2.png""
-                            alt=" Illustration : personne devant un ordinateur">
-                    </div>
-
-
-                    <div class="footer__motto">
-                        <span class="footer__motto-line">Libérez </span>
-                        <span class="footer__motto-line">votre</span>
-                        <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
-                    </div>
-
-                    <div class="footer__contact">
-
-                        <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
-
-                        <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
-
-                        <ul class="footer__contact-icons">
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
-                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
-                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="footer__row">
+                <div>
+                    <img src="assets/img/illustration_v2.png" alt="Illustration : personne devant un ordinateur">
                 </div>
 
-                <div class="footer__row">
-                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+                <div class="footer__motto">
+                    <span class="footer__motto-line">Libérez </span>
+                    <span class="footer__motto-line">votre</span>
+                    <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
+                </div>
+
+                <div class="footer__contact">
+                    <p class="footer__contact-label">Appelez-nous dès aujourd'hui :</p>
+                    <p>
+                        <a class="footer__contact-link" href="tel:5146578888">514 657-8888</a>
+                    </p>
+
+                    <ul class="footer__contact-icons">
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+
+            <div class="footer__row">
+                <span>©Copyright 2026 | TaskFlow </span><span>Termes et
+                    conditions</span><span>Confidentialité</span><span>Codé avec ♡ par Nathalie Depierre</span>
+            </div>
+        </div>
     </footer>
+    <!--Footer-->
 </body>
 
 </html>

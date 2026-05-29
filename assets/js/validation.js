@@ -69,7 +69,7 @@ const validateStep1 = () => {
         setError(email, "Ce champ est requis");
         noError = false;
     } else if (!validateEmail(emailValue)) {
-        setError(email, "Le format n'est pas bon");
+        setError(email, "Le format n'est pas bon, doit être nom@ndd.com");
         noError = false;
     }
     else {
@@ -78,16 +78,13 @@ const validateStep1 = () => {
     if (noError === true) {
         steps(step1, step2);
         nextTab();
-
     }
-
 }
 const validateStep2 = () => {
     let noError = true;
     //Step 2
     const businessValue = business.value.trim();
     const activityValue = activity.value;
-
 
     // Validation du nom de l'entreprise
     if (businessValue === '') {
@@ -113,10 +110,14 @@ const validateStep2 = () => {
     });
 
     if (!radioSelected) {
+        const radioGroup = teamSize[0].closest('[role="radiogroup"]');
+        radioGroup.setAttribute('aria-invalid', 'true');
         setError(teamSize[0], "Veuillez choisir une taille d'équipe");
         noError = false;
     } else {
-        setSuccess(teamSize[0])
+        const radioGroup = teamSize[0].closest('[role="radiogroup"]');
+        radioGroup.removeAttribute('aria-invalid');
+        setSuccess(teamSize[0]);
     }
 
     if (noError === true) {
@@ -131,7 +132,6 @@ const validateForm = () => {
     const userValue = user.value.trim();
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
-
 
     // Validation du nom d'utilisateur
     if (userValue === '') {
@@ -169,9 +169,13 @@ const validateForm = () => {
         }
     });
     if (!radioSelected) {
+        const radioGroup = subscription[0].closest('[role="radiogroup"]');
+        radioGroup.setAttribute('aria-invalid', 'true');
         setError(subscription[0], "Veuillez choisir un plan");
         noError = false;
     } else {
+        const radioGroup = subscription[0].closest('[role="radiogroup"]');
+        radioGroup.removeAttribute('aria-invalid');
         setSuccess(subscription[0]);
     }
 
@@ -196,19 +200,13 @@ buttonNext2.addEventListener('click', (event) => {
 });
 buttonPrevious1.addEventListener('click', (event) => {
     event.preventDefault();
-    console.log('Previous cliqué');           // ← est-ce que ça s'affiche ?
-    console.log('step2 classes :', step2.classList.toString());
-    console.log('step1 classes :', step1.classList.toString());
     steps(step2, step1);
-    console.log('Après steps →');
-    console.log('step2 classes :', step2.classList.toString());
-    console.log('step1 classes :', step1.classList.toString());
     previousTab();
 });
 
 buttonPrevious2.addEventListener('click', (event) => {
     event.preventDefault();
-    steps(step3, step2);   // inverse de validateStep2
+    steps(step3, step2);
     previousTab();
 });
 
@@ -254,6 +252,7 @@ function setError(element, message) {
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
     inputControl.classList.remove('success');
+    element.setAttribute('aria-invalid', 'true');
 }
 
 function setSuccess(element) {
@@ -263,6 +262,7 @@ function setSuccess(element) {
     errorDisplay.innerText = "";
     inputControl.classList.remove('error');
     inputControl.classList.add('success');
+    element.setAttribute('aria-invalid', 'false');
 }
 
 const tabs = document.querySelectorAll(".tabs__item");
@@ -285,5 +285,3 @@ function steps(previousStep, nextStep) {
     previousStep.classList.remove('form__step--active');
     nextStep.classList.add('form__step--active')
 }
-
-

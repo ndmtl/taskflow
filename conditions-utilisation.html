@@ -7,151 +7,170 @@
     <title>Inscription | TaskFlow, une plateforme pour créer des projets efficaces</title>
     <meta name="description"
         content="TaskFlow est une plateforme web en mode SaaS (Software as a Service) qui permet aux équipes de gérer des projets.">
-
     <!--Styles-->
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.cs
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="assets/img/taskflow_favicon.png">
     <!--JS-->
-    <script src="assets/js/validation.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
     <!--Header-->
     <header>
-        <div class="container">
-
+        <div class="container" role="banner">
             <nav class="nav">
                 <div>
-                    <a href="index.html">
+                    <a href="inscription.html">
                         <img src="assets/img/taskflow_logo.png" class="logo__img" alt="Logo TaskFlow">
                     </a>
                 </div>
 
-                <ul class="nav__list">
-
-                    <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+                <ul class="nav__list" id="navList">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">Services</a>
+                    </li>
                     <li class="nav__item"><a href="#" class="nav__link">Prix</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+                    <li class="nav__item">
+                        <a href="#" class="nav__link">À propos</a>
+                    </li>
 
-                    <li class="nav__item nav__item--active"><a href="#" class="nav__link">S'inscrire</a></li>
+                    <li class="nav__item nav__item--active">
+                        <a href="inscription.html" class="nav__link">S'inscrire</a>
+                    </li>
 
                     <li class="nav__item nav__item--login">
                         <a href="#" class="nav__link">
                             <i class="fa-solid fa-circle-user nav__icon" aria-hidden="true"></i>Se connecter
                         </a>
                     </li>
+                    <li class="nav__item nav__item--phone">
+                        <a href="tel:5146578888" class="nav__link">514 657-8888</a>
+                    </li>
                 </ul>
 
-
-                <ul class="nav__toggle">
-                    <li class="hamburger"><span></span></li>
-                </ul>
+                <!--Toggle-->
+                <button class="nav__toggle-btn" onclick="toggleNav()" aria-label="Menu" aria-expanded="false"
+                    aria-controls="nav-menu" type="button">
+                    <span class="nav__hamburger" aria-hidden="true"><span></span></span>
+                </button>
                 <!--Toggle-->
             </nav>
         </div>
     </header>
     <!--Header-->
+    <!--Main-->
     <main>
         <section>
-            <div class="container">
+            <div class="container conditions">
 
 
-                <h1>Textes écrits petit dans un langage abscon</h1>
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+                <h1 class="conditions__title">Textes écrits petit dans un langage abscon</h1>
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
 
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
-                <h2>Lorem ispsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci id mauris
+
+                <h2 class="conditions__title">Lorem ispsum</h2>
+                <p class="conditions__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pretium orci
+                    id mauris
                     sollicitudin, laoreet viverra magna posuere. Vivamus vitae turpis quam. Interdum et malesuada
                     fames ac ante ipsum primis in faucibus. Vivamus rutrum sem at turpis luctus posuere.
                     Pellentesque non tempus odio. Suspendisse quis quam massa. Maecenas in mollis libero, id
                     venenatis leo. Fusce tristique est ligula. Donec posuere neque id pellentesque tincidunt..</p>
+
 
 
             </div>
         </section>
     </main>
-
+    <!--Main-->
+    <!--Footer-->
     <footer id="footer">
-        <section>
-            <div class="container">
-                <div class="footer__row">
-                    <div>
-                        <img src="assets/img/illustration_v2.png" style="max-width: 300px;"
-                            alt="Illustration : personne devant un ordinateur">
-                    </div>
-
-
-                    <div class="footer__motto">
-                        <span class="footer__motto-line">Libérez </span>
-                        <span class="footer__motto-line">votre</span>
-                        <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
-                    </div>
-
-                    <div class="footer__contact">
-
-                        <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
-
-                        <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
-
-                        <ul class="footer__contact-icons">
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
-                                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="footer__contact-icons__item">
-                                <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
-                                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="container">
+            <div class="footer__row">
+                <div>
+                    <img src="assets/img/illustration_v2.png" alt="Illustration : personne devant un ordinateur">
                 </div>
 
-                <div class="footer__row">
-                    <span>©Copyright 2026 | TaskFlow </span><span>Codé avec ♡ par Nathalie Depierre</span>
+
+                <div class="footer__motto">
+                    <span class="footer__motto-line">Libérez </span>
+                    <span class="footer__motto-line">votre</span>
+                    <span class="footer__motto-line footer__motto-line--colored">potentiel</span>
+                </div>
+
+                <div class="footer__contact">
+
+                    <p class="footer__contact-label">Appelez-nous dès aujourd'hui : </p>
+
+                    <p><a class="footer__contact-link" href="tel:5146578888">514 657-8888</a></p>
+
+                    <ul class="footer__contact-icons">
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="LinkedIn">
+                                <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer__contact-icons__item">
+                            <a class="footer__contact-icons__link" href="#" aria-label="TikTok">
+                                <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+
+            <div class="footer__row">
+                <span>©Copyright 2026 | TaskFlow </span><span>Termes et
+                    conditions</span><span>Confidentialité</span><span>Codé avec ♡ par Nathalie Depierre</span>
+            </div>
+        </div>
     </footer>
+    <!--Footer-->
 </body>
 
 </html>
