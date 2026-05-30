@@ -24,7 +24,6 @@ const step3 = document.getElementById('step3');
 //Boutons
 const buttonNext1 = document.getElementById('buttonNext1');
 const buttonNext2 = document.getElementById('buttonNext2');
-
 const buttonPrevious1 = document.getElementById('buttonPrevious1');
 const buttonPrevious2 = document.getElementById('buttonPrevious2');
 
@@ -38,14 +37,14 @@ const validateStep1 = () => {
 
     // //Validation du prénonom
     if (firstNameValue === '') {
-        setError(firstName, "Ce champ est requis");
+        setError(firstName, "Le prénom est requis");
         noError = false;
     } else {
         setSuccess(firstName);
     }
     // //Validation du nom
     if (lastNameValue === '') {
-        setError(lastName, "Ce champs est requis");
+        setError(lastName, "Le nom est requis");
         noError = false;
     } else {
         setSuccess(lastName);
@@ -55,7 +54,7 @@ const validateStep1 = () => {
     const cleanPhone = phoneValue.replace(/\D/g, '');
 
     if (cleanPhone === '') {
-        setError(phone, "Ce champ est requis");
+        setError(phone, "Le téléphone est requis");
         noError = false;
     } else if (cleanPhone.length !== 10) {
         setError(phone, "Doit contenir 10 chiffres");
@@ -66,10 +65,10 @@ const validateStep1 = () => {
 
     //Validation de l'email
     if (emailValue === '') {
-        setError(email, "Ce champ est requis");
+        setError(email, "Le courriel est requis");
         noError = false;
     } else if (!validateEmail(emailValue)) {
-        setError(email, "Le format n'est pas bon, doit être nom@ndd.com");
+        setError(email, "Le format n'est pas bon, doit être de format: nom@ndd.com");
         noError = false;
     }
     else {
@@ -88,14 +87,14 @@ const validateStep2 = () => {
 
     // Validation du nom de l'entreprise
     if (businessValue === '') {
-        setError(business, "Ce champ est requis");
+        setError(business, "Le nom de l'entreprise est requis");
         noError = false;
     } else {
         setSuccess(business);
     }
     // Validation du champssecteur d'activités
     if (activityValue === '') {
-        setError(activity, "Ce champ est requis");
+        setError(activity, "Le secteur d'activité est requis");
         noError = false;
     } else {
         setSuccess(activity);
@@ -135,10 +134,10 @@ const validateForm = () => {
 
     // Validation du nom d'utilisateur
     if (userValue === '') {
-        setError(user, "Ce champ est requis");
+        setError(user, "Le nom d'utilisateur/trice est requis");
         noError = false; // Ne pas oublier !
     } else if (userValue.length < 8) {
-        setError(user, "Le nom d'utilisateur doit comporter 8 lettres");
+        setError(user, "Le nom d'utilisateur/trice doit comporter 8 lettres");
         noError = false; // Ne pas oublier !
     } else {
         setSuccess(user); // On passe l'élément 'user', pas 'userValue'
@@ -237,7 +236,7 @@ const validatePassword = (input) => {
 
     if (errors.length > 0) {
 
-        setError(input, "Requis : " + errors.join(" · "));
+        setError(input, "Mot de passe requis: " + errors.join(" · "));
         return false;
     } else {
         setSuccess(input);
