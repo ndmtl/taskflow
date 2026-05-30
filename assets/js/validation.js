@@ -3,13 +3,12 @@
 const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
-const phone = document.getElementById('phone');
 const email = document.getElementById('email');
+const birthDate = document.getElementById('birthDate');
 // Infos de l'entreprise
 const business = document.getElementById('business');
 const activity = document.getElementById('activity');
 const teamSize = document.getElementsByName('teamSize');
-const website = document.getElementById('website');
 //Infos compte
 const user = document.getElementById('user')
 const password = document.getElementById('password');
@@ -32,8 +31,8 @@ const validateStep1 = () => {
 
     const firstNameValue = firstName.value.trim().toLowerCase();
     const lastNameValue = lastName.value.trim().toLowerCase();
-    const phoneValue = phone.value.trim();
     const emailValue = email.value.trim().toLowerCase();
+
 
     // //Validation du prénonom
     if (firstNameValue === '') {
@@ -50,17 +49,27 @@ const validateStep1 = () => {
         setSuccess(lastName);
     }
 
-    //Validation du téléphone
-    const cleanPhone = phoneValue.replace(/\D/g, '');
 
-    if (cleanPhone === '') {
-        setError(phone, "Le téléphone est requis");
-        noError = false;
-    } else if (cleanPhone.length !== 10) {
-        setError(phone, "Doit contenir 10 chiffres");
+    // Validation de date de naissance
+    const birthDateValue = birthDate.value;
+
+    if (birthDateValue === '') {
+        setError(birthDate, "La date de naissance est requise");
         noError = false;
     } else {
-        setSuccess(phone);
+        const today = new Date();
+        const birth = new Date(birthDateValue);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        if (age < 18) {
+            setError(birthDate, "L'age requis doit être supérieur à 18 ans");
+            noError = false;
+        } else {
+            setSuccess(birthDate);
+        }
     }
 
     //Validation de l'email
@@ -135,12 +144,15 @@ const validateForm = () => {
     // Validation du nom d'utilisateur
     if (userValue === '') {
         setError(user, "Le nom d'utilisateur/trice est requis");
-        noError = false; // Ne pas oublier !
+        noError = false;
     } else if (userValue.length < 8) {
-        setError(user, "Le nom d'utilisateur/trice doit comporter 8 lettres");
-        noError = false; // Ne pas oublier !
+        setError(user, "Le nom d'utilisateur/trice doit comporter 8 caractères");
+        noError = false;
+    } else if (/\s/.test(user.value)) {
+        setError(user, "Le nom d'utilisateur/trice ne doit pas contenir d'espaces");
+        noError = false;
     } else {
-        setSuccess(user); // On passe l'élément 'user', pas 'userValue'
+        setSuccess(user);
     }
 
     // Validation du mot de passe 

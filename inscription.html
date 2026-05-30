@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    <a href="#content" class="screen-reader-text">Aller au contenu principal</a>
     <!--Header-->
     <header>
         <div class="container" role="banner">
@@ -67,7 +68,7 @@
     </header>
     <!--Header-->
     <!--Main-->
-    <main>
+    <main id="content">
         <section>
             <div class="container">
                 <div class="content">
@@ -116,17 +117,22 @@
                             </div>
 
                             <div class="input-control">
-                                <label class="input-control__label" for="phone">Téléphone*</label>
-                                <input class="input-control__field" id="phone" name="phone" type="tel"
-                                    placeholder="xxx xxx-xxxx" maxlength="10" aria-describedby="phone-error" required>
-                                <div class="input-control__error-message" id="phone-error" aria-live="polite"></div>
-                            </div>
-
-                            <div class="input-control">
                                 <label class="input-control__label" for="email">Courriel*</label>
                                 <input class="input-control__field" id="email" name="email" type="email"
                                     placeholder="nom@domaine.com" aria-describedby="email-error" required>
                                 <div class="input-control__error-message" id="email-error" aria-live="polite"></div>
+                            </div>
+
+                            <div class="input-control">
+                                <label class="input-control__label" for="phone">Téléphone (facultatif)</label>
+                                <input class="input-control__field" id="phone" name="phone" type="tel"
+                                    placeholder="xxx xxx-xxxx" maxlength="10">
+                            </div>
+                            <div class="input-control">
+                                <label class="input-control__label" for="birthDate">Date de naissance*</label>
+                                <input class="input-control__field" id="birthDate" name="birthDate" type="date"
+                                    placeholder="AAAA-MM-JJ" aria-describedby="birthDate-error" required>
+                                <div class="input-control__error-message" id="birthDate-error" aria-live="polite"></div>
                             </div>
 
                             <div class="button-group button-group--end">
@@ -186,10 +192,10 @@
                             </div>
 
                             <div class="input-control">
-                                <label class="input-control__label" for="website">Site Internet</label>
+                                <label class="input-control__label" for="website">Site Internet (facultatif)</label>
                                 <input class="input-control__field" id="website" name="website" type="url"
                                     placeholder="https://www.ndd.com">
-                                <div class="input-control__error-message"></div>
+
                             </div>
 
                             <div class="button-group">
@@ -208,7 +214,7 @@
 
                             <div class="input-control">
                                 <label class="input-control__label" for="user">Nom d'utilisateur/trice*
-                                    <span class="input-control__hint">Minimum 8 caractères</span>
+                                    <span class="input-control__hint">Minimum 8 caractères, pas d'espace</span>
                                 </label>
                                 <input class="input-control__field" id="user" name="user" type="text"
                                     placeholder="Utilisateur/trice" minlength="8" aria-describedby="user-error"
