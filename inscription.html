@@ -23,9 +23,10 @@
 </head>
 
 <body>
-    <a href="#content" class="screen-reader-text">Aller au contenu principal</a>
+
     <!--Header-->
     <header>
+        <a href="#content" class="screen-reader-text">Aller au contenu principal</a>
         <div class="container" role="banner">
             <nav class="nav">
                 <div>
@@ -126,10 +127,13 @@
                             <div class="input-control">
                                 <label class="input-control__label" for="phone">Téléphone (facultatif)</label>
                                 <input class="input-control__field" id="phone" name="phone" type="tel"
-                                    placeholder="xxx xxx-xxxx" maxlength="10">
+                                    placeholder="xxx xxx-xxxx" aria-describedby="phone-error">
+                                <div class="input-control__error-message" id="phone-error" aria-live="polite"></div>
                             </div>
                             <div class="input-control">
-                                <label class="input-control__label" for="birthDate">Date de naissance*</label>
+                                <label class="input-control__label" for="birthDate">Date de naissance*
+                                    <span class="input-control__hint">Vous devez être majeur pour utiliser nos
+                                        services</span></label>
                                 <input class="input-control__field" id="birthDate" name="birthDate" type="date"
                                     placeholder="AAAA-MM-JJ" aria-describedby="birthDate-error" required>
                                 <div class="input-control__error-message" id="birthDate-error" aria-live="polite"></div>
@@ -214,7 +218,7 @@
 
                             <div class="input-control">
                                 <label class="input-control__label" for="user">Nom d'utilisateur/trice*
-                                    <span class="input-control__hint">Minimum 8 caractères, pas d'espace</span>
+                                    <span class="input-control__hint">Entre 8 et 20 caractères, pas d'espace</span>
                                 </label>
                                 <input class="input-control__field" id="user" name="user" type="text"
                                     placeholder="Utilisateur/trice" minlength="8" aria-describedby="user-error"

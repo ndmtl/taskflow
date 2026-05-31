@@ -115,6 +115,8 @@ html {
    CONTAINER
    ============================================================ */
 
+
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -151,6 +153,23 @@ main .container {
     width: 1px;
     word-wrap: normal !important;
     word-break: normal !important;
+}
+
+/*Focus*/
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
 }
 
 /* ============================================================
@@ -272,7 +291,7 @@ h1 {
 
 .input-control__hint {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .input-control__field {

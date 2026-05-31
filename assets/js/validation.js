@@ -4,6 +4,7 @@ const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
+const phone = document.getElementById('phone');
 const birthDate = document.getElementById('birthDate');
 // Infos de l'entreprise
 const business = document.getElementById('business');
@@ -32,6 +33,8 @@ const validateStep1 = () => {
     const firstNameValue = firstName.value.trim().toLowerCase();
     const lastNameValue = lastName.value.trim().toLowerCase();
     const emailValue = email.value.trim().toLowerCase();
+    const phoneValue = phone.value.trim();
+    const birthDateValue = birthDate.value;
 
 
     // //Validation du prénonom
@@ -48,10 +51,30 @@ const validateStep1 = () => {
     } else {
         setSuccess(lastName);
     }
+    //Validation de l'email
+    if (emailValue === '') {
+        setError(email, "Le courriel est requis");
+        noError = false;
+    } else if (!validateEmail(emailValue)) {
+        setError(email, "Le format n'est pas bon, doit être de format: nom@ndd.com");
+        noError = false;
+    }
+    else {
+        setSuccess(email);
+    }
 
+    //Validation du téléphone
+    if ((phoneValue === '')) {
+        setSuccess(phone);
+    }
+    else if (!validatePhone(phoneValue)) {
+        setError(phone, "Le téléphone doit contenir 10 chiffres");
+        noError = false;
+    } else {
+        setSuccess(phone);
+    }
 
     // Validation de date de naissance
-    const birthDateValue = birthDate.value;
 
     if (birthDateValue === '') {
         setError(birthDate, "La date de naissance est requise");
@@ -71,22 +94,11 @@ const validateStep1 = () => {
             setSuccess(birthDate);
         }
     }
-
-    //Validation de l'email
-    if (emailValue === '') {
-        setError(email, "Le courriel est requis");
-        noError = false;
-    } else if (!validateEmail(emailValue)) {
-        setError(email, "Le format n'est pas bon, doit être de format: nom@ndd.com");
-        noError = false;
-    }
-    else {
-        setSuccess(email);
-    }
     if (noError === true) {
         steps(step1, step2);
         nextTab();
     }
+
 }
 const validateStep2 = () => {
     let noError = true;
@@ -101,7 +113,7 @@ const validateStep2 = () => {
     } else {
         setSuccess(business);
     }
-    // Validation du champssecteur d'activités
+    // Validation du champsecteur d'activités
     if (activityValue === '') {
         setError(activity, "Le secteur d'activité est requis");
         noError = false;
@@ -231,7 +243,12 @@ function validateEmail(email) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return regex.test(email);
 }
+function validatePhone(phone) {
 
+    const cleanNumber = phone.replace(/[\s-]/g, '');
+    const regex = /^\d{10}$/;
+    return regex.test(cleanNumber);
+}
 const validatePassword = (input) => {
     const passwordValue = input.value.trim();
 
