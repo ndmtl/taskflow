@@ -157,8 +157,8 @@ const validateForm = () => {
     if (userValue === '') {
         setError(user, "Le nom d'utilisateur/trice est requis");
         noError = false;
-    } else if (userValue.length < 8) {
-        setError(user, "Le nom d'utilisateur/trice doit comporter 8 caractères");
+    } else if (userValue.length < 8 || userValue.length > 20) {
+        setError(user, "Le nom d'utilisateur/trice doit comporter entre 8 et 20 caractères");
         noError = false;
     } else if (/\s/.test(user.value)) {
         setError(user, "Le nom d'utilisateur/trice ne doit pas contenir d'espaces");
