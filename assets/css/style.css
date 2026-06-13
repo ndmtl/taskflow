@@ -251,9 +251,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
-
 
 .tabs__item--rounded {
     display: block;
@@ -360,15 +358,15 @@ h1 {
 /* ============================================================
    CONDITIONS
    ============================================================ */
-h1.conditions__title {
+.conditions__title {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-h2.conditions__title {
+.conditions__title {
     font-size: 1rem;
 }
 
-p.conditions__text {
+.conditions__text {
     font-size: 0.8rem;
 }
 

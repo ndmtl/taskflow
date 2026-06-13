@@ -16,6 +16,7 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 const subscription = document.getElementsByName('subscription');
 const conditions = document.getElementById('conditions');
+
 //fieldset
 const step1 = document.getElementById('step1');
 const step2 = document.getElementById('step2');
@@ -254,7 +255,7 @@ const validatePassword = (input) => {
 
     const hasMaj = /[A-Z]/;
     const number = /[0-9]/;
-    const special = /[!@#$%^&*]/;
+    const special = /[!@#$%^&*-_.]/;
 
     const errors = [];
 
@@ -278,8 +279,8 @@ function setError(element, message) {
     const errorDisplay = inputControl.querySelector('.input-control__error-message');
 
     errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success');
+    inputControl.classList.add('input-control--error');
+    inputControl.classList.remove('input-control--success');
     element.setAttribute('aria-invalid', 'true');
 }
 
@@ -288,8 +289,8 @@ function setSuccess(element) {
     const errorDisplay = inputControl.querySelector('.input-control__error-message');
 
     errorDisplay.innerText = "";
-    inputControl.classList.remove('error');
-    inputControl.classList.add('success');
+    inputControl.classList.remove('input-control--error');
+    inputControl.classList.add('input-control--success');
     element.setAttribute('aria-invalid', 'false');
 }
 
